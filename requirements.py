@@ -152,6 +152,11 @@ def requirements_file(view):
     dirname = os.path.basename(os.path.dirname(fname))
     if dirname == "requirements" and fname.endswith(".txt"):
         return True
+
+    sfname = basename.split('.')
+    if len(sfname) == 3 and sfname[0] == 'requirements' and sfname[2] == 'txt':
+        return True
+
     return False
 
 
